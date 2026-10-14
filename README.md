@@ -52,84 +52,13 @@ Tài liệu thiết kế:
 
 ## Cấu trúc thư mục
 
-- `code/`: chương trình Arduino và sơ đồ Wokwi{
-  "version": 1,
-  "author": "Anonymous maker",
-  "editor": "wokwi",
-  "parts": [
-    { "type": "wokwi-arduino-nano", "id": "nano", "top": 0, "left": 0, "attrs": {} },
-    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -123.3, "left": -13.7, "attrs": {} },
-    {
-      "type": "wokwi-servo",
-      "id": "servo1",
-      "top": -22,
-      "left": -198.8,
-      "rotate": 180,
-      "attrs": {}
-    }
-  ],
-  "connections": [
-    [ "nano:9", "ultrasonic1:TRIG", "green", [ "h-0.5", "v-33.6" ] ],
-    [ "nano:5V", "ultrasonic1:VCC", "red", [ "v-72", "h-67.7" ] ],
-    [ "ultrasonic1:ECHO", "nano:10", "green", [ "h-10.4", "v33.6" ] ],
-    [ "ultrasonic1:GND", "nano:GND.1", "black", [ "h114", "v91.2" ] ],
-    [ "servo1:GND", "nano:GND.1", "black", [ "h19.2", "v28.8", "h134.9" ] ],
-    [ "servo1:V+", "nano:5V", "green", [ "v28.7", "h134.9" ] ],
-    [ "servo1:PWM", "nano:6", "green", [ "h0" ] ]
-  ],
-  "dependencies": {}
-} [diagram.json](https://github.com/user-attachments/files/33414737/diagram.json)
+- `code/` mình dùng cho Wokwi như sau:
+-  Chương trình Arduino: [code/sketch.ino](code/sketch.ino)
+  
+-  [diagram.json](https://github.com/user-attachments/files/33414737/diagram.json)
 
 
-Code mà mình dùng trong Wowki như sau:
-[Upl#include <Servo.h>
 
-const int trigPin = 9;
-const int echoPin = 10;
-Servo myServo;
-
-const int minDist = 2;   // cm - khoảng cách gần nhất
-const int maxDist = 30;  // cm - khoảng cách xa nhất
-
-void setup() {
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-  myServo.attach(6);
-  Serial.begin(9600);
-}
-
-long readDistance() {
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-
-  long duration = pulseIn(echoPin, HIGH, 30000); // timeout 30ms
-  long distance = duration * 0.034 / 2;
-  return distance;
-}
-
-void loop() {
-  long distance = readDistance();
-  distance = constrain(distance, minDist, maxDist);
-
-  int angle = map(distance, minDist, maxDist, 0, 180);
-  myServo.write(angle);
-
-  Serial.print("Khoang cach: ");
-  Serial.print(distance);
-  Serial.print(" cm -> Goc: ");
-  Serial.println(angle);
-
-  delay(100);
-}
-
-
-oading sketch.ino code…]()
-
-
-- `thiet-ke/`: file thiết kế, file STL, bản vẽ PDF
 
 ## Nguồn mô hình 3D
 
