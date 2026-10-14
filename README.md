@@ -36,11 +36,6 @@ Mình thiết kế một chiếc đế bằng Fusion 360 để gắn servo, cả
 
 ![Đế hoàn chỉnh, nhìn từ trước](https://github.com/user-attachments/assets/e2f672ef-234c-4cfb-8027-f628831556b4)
 
-Mô hình 3D và STL của đế:
-
-![Mô hình đế, góc nhìn 1](https://github.com/user-attachments/assets/ab80fee0-c09f-416d-99b5-d5cd4c0436ca)
-
-![Mô hình đế, góc nhìn 2](https://github.com/user-attachments/assets/288adfaf-a5d1-4e04-8af8-3cae0519d84a)
 
 
 
